@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#000000</color>
+    <color name="black_off_90">#E6000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="transparent">#00FFFFFF</color>
+    <color name="upload_product_edit_color">#66000000</color>
+
+
+    <color name="grey">#B9B9B9</color>
+    <color name="auth_edittext_border">#B8B8B8</color>
+    <color name="dividers">#D8D8D8</color>
+    <color name="grey_button">#F6F6F6</color>
+    <color name="lighter_grey">#F2F2F2</color>
+    <color name="light_grey">#CFCFCF</color>
+    <color name="dark_grey">#A2A2A2</color>
+    <color name="darker_grey">#707070</color>
+    <color name="view_more_grey">#CBCBCB</color>
+    <color name="fav_divider_color">#F3F3F3</color>
+    <color name="unread_notification_background">#F1F1F1</color>
+    <color name="profile_screen_background">#FAFAFA</color>
+    <color name="profile_username_color">#7B7B7B</color>
+    <color name="star_color">#FEC439</color>
+    <color name="store_products_color">#9A9A9A</color>
+    <color name="product_price_color">#AFAFAF</color>
+    <color name="delete_button_color">#FF6363</color>
+    <color name="greenish_button_color">#2DCE98</color>
+    <color name="chat_item_background">#F9F9F9</color>
+    <color name="grey_300">#D6D6D6</color>
+    <color name="blue_grey_900">#282F36</color>
+
+
+    <!--Pix colors-->
+    <color name="video_counter_color_pix">#E53935</color>
+    <color name="primary_color_pix">#075e54</color>
+    <color name="primary_light_color_pix">#80075e54</color>
+    <color name="surface_color_pix">#ffffff</color>
+    <color name="text_color_pix">#807f7f</color>
+
+
+</resources>

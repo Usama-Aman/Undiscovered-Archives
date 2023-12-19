@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.codingpixel.undiscoveredarchives.view_models.HomeViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/topBar"
+            layout="@layout/layout_toolbar" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingHorizontal="20dp"
+                android:paddingBottom="20dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp">
+
+                    <TextView
+                        android:id="@+id/tvAdminApproval"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="10dp"
+                        android:fontFamily="@font/roboto_medium"
+                        android:text="Admin Approvals"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toLeftOf="@id/adminApprovalSwitch"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tvAdminDescription"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:fontFamily="@font/roboto_regular"
+                        android:text="Lorem ipsum dolor sit amet, conset saetur sadipscing elitr, sed nonumy"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toLeftOf="@id/adminApprovalSwitch"
+                        app:layout_constraintTop_toBottomOf="@id/tvAdminApproval" />
+
+                    <com.suke.widget.SwitchButton
+                        android:id="@+id/adminApprovalSwitch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:sb_checked_color="@color/black"
+                        app:sb_checkline_color="@color/black"
+                        app:sb_checkline_width="0dp" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/fav_divider_color"
+                    app:layout_constraintTop_toBottomOf="@id/barrier" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp">
+
+                    <TextView
+                        android:id="@+id/tvOrderUpdates"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="10dp"
+                        android:fontFamily="@font/roboto_medium"
+                        android:text="Order Updates"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toLeftOf="@id/orderUpdatesSwitch"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tvOrderUpdatesDescription"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:fontFamily="@font/roboto_regular"
+                        android:text="Lorem ipsum dolor sit amet, conset saetur sadipscing elitr, sed nonumy"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toLeftOf="@id/orderUpdatesSwitch"
+                        app:layout_constraintTop_toBottomOf="@id/tvOrderUpdates" />
+
+                    <com.suke.widget.SwitchButton
+                        android:id="@+id/orderUpdatesSwitch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:sb_checked_color="@color/black"
+                        app:sb_checkline_color="@color/black"
+                        app:sb_checkline_width="0dp" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/fav_divider_color"
+                    app:layout_constraintTop_toBottomOf="@id/barrier" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp">
+
+                    <TextView
+                        android:id="@+id/tvMessageFromBuyerSeller"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="10dp"
+                        android:fontFamily="@font/roboto_medium"
+                        android:text="Messages from Seller &amp; Buyer"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toLeftOf="@id/messageFromBuyerSellerSwitch"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tvMessageFromBuyerSellerDescription"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:fontFamily="@font/roboto_regular"
+                        android:text="Lorem ipsum dolor sit amet, conset saetur sadipscing elitr, sed nonumy"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toLeftOf="@id/messageFromBuyerSellerSwitch"
+                        app:layout_constraintTop_toBottomOf="@id/tvMessageFromBuyerSeller" />
+
+                    <com.suke.widget.SwitchButton
+                        android:id="@+id/messageFromBuyerSellerSwitch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:sb_checked_color="@color/black"
+                        app:sb_checkline_color="@color/black"
+                        app:sb_checkline_width="0dp" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/fav_divider_color"
+                    app:layout_constraintTop_toBottomOf="@id/barrier" />
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp">
+
+                    <TextView
+                        android:id="@+id/tvPaymentUpdates"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="10dp"
+                        android:fontFamily="@font/roboto_medium"
+                        android:text="Payment Updates"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toLeftOf="@id/paymentUpdatesSwitch"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tvPaymentUpdatesDescription"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:fontFamily="@font/roboto_regular"
+                        android:text="Lorem ipsum dolor sit amet, conset saetur sadipscing elitr, sed nonumy"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toLeftOf="@id/paymentUpdatesSwitch"
+                        app:layout_constraintTop_toBottomOf="@id/tvPaymentUpdates" />
+
+                    <com.suke.widget.SwitchButton
+                        android:id="@+id/paymentUpdatesSwitch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:sb_checked_color="@color/black"
+                        app:sb_checkline_color="@color/black"
+                        app:sb_checkline_width="0dp" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/fav_divider_color"
+                    app:layout_constraintTop_toBottomOf="@id/barrier" />
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp">
+
+                    <TextView
+                        android:id="@+id/tvProfileUpdates"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="10dp"
+                        android:fontFamily="@font/roboto_medium"
+                        android:text="Profile Updates"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toLeftOf="@id/profileUpdatesSwitch"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tvProfileUpdatesDescription"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:fontFamily="@font/roboto_regular"
+                        android:text="Lorem ipsum dolor sit amet, conset saetur sadipscing elitr, sed nonumy"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toLeftOf="@id/profileUpdatesSwitch"
+                        app:layout_constraintTop_toBottomOf="@id/tvProfileUpdates"
+                        tools:ignore="HardcodedText" />
+
+                    <com.suke.widget.SwitchButton
+                        android:id="@+id/profileUpdatesSwitch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:sb_checked_color="@color/black"
+                        app:sb_checkline_color="@color/black"
+                        app:sb_checkline_width="0dp" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/fav_divider_color"
+                    app:layout_constraintTop_toBottomOf="@id/barrier" />
+
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </LinearLayout>
+</layout>

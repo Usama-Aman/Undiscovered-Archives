@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ExpandableListView
+        android:id="@+id/expandableListView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:divider="@color/transparent"
+        android:groupIndicator="@null"
+        android:indicatorRight="10dp"
+        android:paddingStart="25dp"
+        android:paddingTop="20dp"
+        android:scrollbarSize="5dp"
+        android:scrollbarThumbVertical="@color/black"
+        android:scrollbars="vertical" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.codingpixel.undiscoveredarchives.view_models.HomeViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            android:id="@+id/topBar"
+            layout="@layout/layout_toolbar" />
+
+        <LinearLayout
+            android:id="@+id/llNoTrash"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="25dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_bold"
+                android:text="Your Trash Is Empty"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/roboto_regular"
+                android:text="Products that have been in Trash more than 30 days will be automatically deleted."
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
+
+        </LinearLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintProducts"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/topBar">
+
+
+            <TextView
+                android:id="@+id/tvHeader"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="15dp"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/roboto_medium"
+                android:gravity="center_vertical"
+                android:text="274 Listings Found"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <Spinner
+                android:id="@+id/filter"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginHorizontal="25dp"
+                android:layout_marginTop="20dp"
+                android:background="@color/transparent"
+                android:dropDownWidth="match_parent"
+                android:spinnerMode="dropdown"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/tvSelect"
+                app:layout_constraintTop_toBottomOf="@id/tvHeader" />
+
+            <TextView
+                android:id="@+id/tvFilter"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_marginStart="25dp"
+                android:drawablePadding="10dp"
+                android:fontFamily="@font/roboto_regular"
+                android:gravity="center_vertical"
+                android:text="All"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:drawableRightCompat="@drawable/ic_spinner_black"
+                app:layout_constraintBottom_toBottomOf="@id/filter"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="@id/filter" />
+
+            <TextView
+                android:id="@+id/tvSelect"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="15dp"
+                android:fontFamily="@font/roboto_regular"
+                android:gravity="center_vertical"
+                android:text="Select"
+                android:textColor="@color/view_more_grey"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@id/filter"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/filter" />
+
+
+            <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+                android:id="@+id/pullToRefresh"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="5dp"
+                app:layout_constraintBottom_toTopOf="@id/constraintListOption"
+                app:layout_constraintTop_toBottomOf="@id/filter">
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/productsRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:clipToPadding="false"
+                    android:orientation="vertical"
+                    android:layoutAnimation="@anim/layout_animation_down_to_up"
+                    android:paddingTop="15dp"
+                    android:scrollbarSize="5dp"
+                    android:scrollbarThumbVertical="@color/black"
+                    android:scrollbars="vertical"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:itemCount="10"
+                    tools:listitem="@layout/item_products" />
+
+
+            </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintListOption"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:elevation="@dimen/panel_elevation"
+                android:padding="15dp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <LinearLayout
+                    android:id="@+id/llTrashOptions"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <LinearLayout
+                        android:id="@+id/btnRestore"
+                        style="@style/AppGreyLargeButtonStyle"
+                        android:layout_width="0dp"
+                        android:layout_marginEnd="15dp"
+                        android:layout_weight="1">
+
+                        <ImageView
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:padding="3dp"
+                            android:src="@drawable/ic_restore" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_bold"
+                            android:text="Restore"
+                            android:textAllCaps="true"
+                            android:textColor="@color/black" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/btnDeleteTrash"
+                        style="@style/AppBlackLargeButtonStyle"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/red_button_drawable">
+
+                        <ImageView
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:padding="3dp"
+                            android:src="@drawable/ic_delete" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_bold"
+                            android:text="Delete"
+                            android:textAllCaps="true"
+                            android:textColor="@color/white" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <ImageView
+            android:id="@+id/ivCross"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="end"
+            android:src="@drawable/ic_cross" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/app_logo_auth" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/roboto_bold"
+            android:text="Your Product Has Been Published!"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/roboto_regular"
+            android:text="Send a message to request more \n details or discuss price."
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/roboto_regular"
+            android:text="Send a message"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+
+        <EditText
+            android:id="@+id/etDescription"
+            style="@style/AuthEdittextStyle"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_marginTop="12dp"
+            android:gravity="start"
+            android:hint="Write something..."
+            android:inputType="textMultiLine"
+            android:overScrollMode="always"
+            android:paddingVertical="5dp"
+            android:scrollbarStyle="insideInset"
+            android:scrollbars="vertical"
+            android:singleLine="false"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+
+        <TextView
+            android:id="@+id/btnOK"
+            style="@style/AppBlackLargeButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_marginTop="25dp"
+            android:text="Send Message" />
+
+    </LinearLayout>
+</layout>

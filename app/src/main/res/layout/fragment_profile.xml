@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.codingpixel.undiscoveredarchives.view_models.HomeViewModel" />
+    </data>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+
+        <include
+            android:id="@+id/topBar"
+            layout="@layout/layout_toolbar" />
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/pullToRefresh"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scrollbarSize="5dp"
+                android:scrollbarThumbVertical="@color/black">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:orientation="vertical"
+                    android:paddingBottom="20dp">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center">
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:id="@+id/ivProfileImage"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:layout_marginTop="20dp"
+                            android:src="@drawable/ic_profile_placeholder"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <ImageView
+                            android:id="@+id/btnEditProfile"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:src="@drawable/ic_edit_profile"
+                            app:layout_constraintBottom_toBottomOf="@id/ivProfileImage"
+                            app:layout_constraintRight_toRightOf="@id/ivProfileImage" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <TextView
+                        android:id="@+id/tvProfileName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="15dp"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/roboto_medium"
+                        android:textAlignment="center"
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/tvProfileUserName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="15dp"
+                        android:fontFamily="@font/roboto_medium"
+                        android:textAlignment="center"
+                        android:textColor="@color/profile_username_color"
+                        android:textSize="15sp" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="15dp"
+                        android:layout_marginTop="15dp">
+
+                        <View
+                            android:id="@+id/viewBetween"
+                            android:layout_width="2dp"
+                            android:layout_height="36dp"
+                            android:background="#E8E8E8"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="36dp"
+                            android:orientation="vertical"
+                            app:layout_constraintBottom_toBottomOf="@id/viewBetween"
+                            app:layout_constraintEnd_toStartOf="@id/viewBetween"
+                            app:layout_constraintTop_toTopOf="@id/viewBetween">
+
+                            <TextView
+                                android:id="@+id/tvListingCount"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:fontFamily="@font/roboto_bold"
+                                android:text="-"
+                                android:textColor="@color/black"
+                                android:textSize="16sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/roboto_regular"
+                                android:text="Listing"
+                                android:textColor="#7B7B7B"
+                                android:textSize="12sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="36dp"
+                            android:orientation="vertical"
+                            app:layout_constraintBottom_toBottomOf="@id/viewBetween"
+                            app:layout_constraintStart_toEndOf="@id/viewBetween"
+                            app:layout_constraintTop_toTopOf="@id/viewBetween">
+
+                            <TextView
+                                android:id="@+id/tvTransactionCount"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:fontFamily="@font/roboto_bold"
+                                android:text="-"
+                                android:textColor="@color/black"
+                                android:textSize="16sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/roboto_regular"
+                                android:text="Transactions"
+                                android:textColor="#7B7B7B"
+                                android:textSize="12sp" />
+                        </LinearLayout>
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <TextView
+                        android:id="@+id/btnSeeChats"
+                        style="@style/AppGreyLargeButtonStyle"
+                        android:layout_width="match_parent"
+                        android:layout_marginHorizontal="15dp"
+                        android:layout_marginTop="20dp"
+                        android:text="See all chats" />
+
+                    <TextView
+                        android:id="@+id/btnSellerUpdates"
+                        style="@style/AppBlackLargeButtonStyle"
+                        android:layout_width="match_parent"
+                        android:layout_marginHorizontal="15dp"
+                        android:layout_marginTop="8dp"
+                        android:text="Become a Seller" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="8dp"
+                        android:layout_marginTop="20dp"
+                        android:background="@color/profile_screen_background" />
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="15dp"
+                        android:layout_marginTop="20dp"
+                        android:fontFamily="@font/roboto_medium"
+                        android:gravity="center_vertical"
+                        android:text="My Products"
+                        android:textColor="@color/black"
+                        android:textSize="18sp" />
+
+
+                    <TextView
+                        android:id="@+id/btnPublishedProducts"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginHorizontal="15dp"
+                        android:layout_marginTop="6dp"
+                        android:drawablePadding="10dp"
+                        android:fontFamily="@font/roboto_regular"
+                        android:gravity="center_vertical"
+                        android:text="Published Products"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        app:drawableStartCompat="@drawable/ic_published_products" />
+
+
+                    <TextView
+                        android:id="@+id/btnDrafts"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginHorizontal="15dp"
+                        android:drawablePadding="10dp"
+                        android:fontFamily="@font/roboto_regular"
+                        android:gravity="center_vertical"
+                        android:text="Drafts"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        app:drawableStartCompat="@drawable/ic_draft_products" />
+
+                    <TextView
+                        android:id="@+id/btnTrash"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginHorizontal="15dp"
+                        android:drawablePadding="10dp"
+                        android:fontFamily="@font/roboto_regular"
+                        android:gravity="center_vertical"
+                        android:text="Trash"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        app:drawableStartCompat="@drawable/ic_trash_products" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="8dp"
+                        android:layout_marginTop="15dp"
+                        android:background="@color/profile_screen_background" />
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="15dp"
+                        android:layout_marginTop="15dp"
+                        android:fontFamily="@font/roboto_medium"
+                        android:gravity="center_vertical"
+                        android:text="My Transactions"
+                        android:textColor="@color/black"
+                        android:textSize="18sp" />
+
+
+                    <TextView
+                        android:id="@+id/btnPurchases"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginHorizontal="15dp"
+                        android:layout_marginTop="6dp"
+                        android:drawablePadding="10dp"
+                        android:fontFamily="@font/roboto_regular"
+                        android:gravity="center_vertical"
+                        android:text="Purchases"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        app:drawableStartCompat="@drawable/ic_purchased_products" />
+
+
+                    <TextView
+                        android:id="@+id/btnSales"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginHorizontal="15dp"
+                        android:drawablePadding="10dp"
+                        android:fontFamily="@font/roboto_regular"
+                        android:gravity="center_vertical"
+                        android:text="Sales"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        app:drawableStartCompat="@drawable/ic_sales_products" />
+
+                    <TextView
+                        android:id="@+id/btnShipping"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginHorizontal="15dp"
+                        android:drawablePadding="10dp"
+                        android:visibility="gone"
+                        android:fontFamily="@font/roboto_regular"
+                        android:gravity="center_vertical"
+                        android:text="Shipping"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        app:drawableStartCompat="@drawable/ic_shipping" />
+
+                    <TextView
+                        android:id="@+id/btnPayments"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginHorizontal="15dp"
+                        android:visibility="gone"
+                        android:drawablePadding="10dp"
+                        android:fontFamily="@font/roboto_regular"
+                        android:gravity="center_vertical"
+                        android:text="Payments"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        app:drawableStartCompat="@drawable/ic_payments" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="8dp"
+                        android:layout_marginTop="15dp"
+                        android:background="@color/profile_screen_background" />
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="15dp"
+                        android:layout_marginTop="15dp"
+                        android:fontFamily="@font/roboto_medium"
+                        android:gravity="center_vertical"
+                        android:text="Settings"
+                        android:textColor="@color/black"
+                        android:textSize="18sp" />
+
+
+                    <TextView
+                        android:id="@+id/btnPaypalAccounts"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginHorizontal="15dp"
+                        android:layout_marginTop="6dp"
+                        android:drawablePadding="10dp"
+                        android:fontFamily="@font/roboto_regular"
+                        android:gravity="center_vertical"
+                        android:text="Paypal Account"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        app:drawableStartCompat="@drawable/ic_paypal_account" />
+
+
+                    <TextView
+                        android:id="@+id/btnNotificationsSettings"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginHorizontal="15dp"
+                        android:drawablePadding="10dp"
+                        android:fontFamily="@font/roboto_regular"
+                        android:gravity="center_vertical"
+                        android:text="Notifications"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        app:drawableStartCompat="@drawable/ic_notification_settings" />
+
+                    <TextView
+                        android:id="@+id/btnCustomerService"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginHorizontal="15dp"
+                        android:drawablePadding="10dp"
+                        android:fontFamily="@font/roboto_regular"
+                        android:gravity="center_vertical"
+                        android:text="Customer Service"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        app:drawableStartCompat="@drawable/ic_customer_service" />
+
+                    <TextView
+                        android:id="@+id/btnLogout"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginHorizontal="15dp"
+                        android:drawablePadding="10dp"
+                        android:fontFamily="@font/roboto_regular"
+                        android:gravity="center_vertical"
+                        android:paddingStart="3dp"
+                        android:text="Logout"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        app:drawableStartCompat="@drawable/ic_logout" />
+
+                </LinearLayout>
+
+            </ScrollView>
+
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    </LinearLayout>
+
+</layout>

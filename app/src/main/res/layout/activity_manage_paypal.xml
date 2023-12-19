@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".home.manage_paypal.ManagePaypalActivity">
+
+        <include
+            android:id="@+id/topBar"
+            layout="@layout/layout_toolbar" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingHorizontal="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="32dp"
+                android:src="@drawable/app_logo_auth"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/roboto_medium"
+                android:text="+"
+                android:textColor="@color/black"
+                android:textSize="22sp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="37dp"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/img_paypal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:alpha=".8"
+                android:fontFamily="@font/roboto_regular"
+                android:gravity="center"
+                android:text="To sell on Undiscovered Archives, please\n connect your PayPal account."
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/btnCreateAccount"
+                style="@style/AppBlackLargeButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_marginTop="28dp"
+                android:text="@string/connect_account" />
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

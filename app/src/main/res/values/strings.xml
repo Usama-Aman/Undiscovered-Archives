@@ -1,0 +1,69 @@
+<resources>
+
+    <!--Facebook keys-->
+    <string name="facebook_app_id">381275326769923</string>
+    <string name="fb_login_protocol_scheme">fb381275326769923</string>
+    <string name="dollar_sign">\u0024</string>
+
+    <string name="braintree_tokenization_key">sandbox_9qd2vks5_bnbngxkr5927mpk3</string>
+
+    <string name="app_name">Undiscovered Archives</string>
+    <string name="title_activity_sign_in">SignInActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+
+    <!--Filter Spinner-->
+    <string-array name="filter_list">
+        <item>All</item>
+        <item>High Price</item>
+        <item>Low Price</item>
+        <item>New</item>
+        <item>Popular</item>
+    </string-array>
+    <!--Filter Spinner-->
+    <string-array name="filter_list_designer">
+        <item>A to Z</item>
+        <item>Z to A</item>
+    </string-array>
+
+    <!--Permission Messages-->
+    <string name="ask_for_camera_permission_button">Camera</string>
+    <string name="ask_for_contacts_permission_button">Contacts</string>
+    <string name="ask_for_audio_permission_button">Audio</string>
+    <string name="ask_for_all_permissions_button">Request all</string>
+    <string name="permission_granted_feedback">GRANTED</string>
+    <string name="permission_denied_feedback">DENIED</string>
+    <string name="permission_permanently_denied_feedback">PERMANENTLY DENIED</string>
+    <string name="permission_unknown_feedback">UNKNOWN</string>
+    <string name="all_permissions_denied_feedback">All those permissions are needed for doing some magic</string>
+    <string name="camera_permission_denied_feedback">Camera permission is needed for doing some magic</string>
+    <string name="contacts_permission_denied_feedback">Contacts permission is needed for doing some magic</string>
+    <string name="audio_permission_denied_dialog_title">Audio permission request</string>
+    <string name="audio_permission_denied_dialog_feedback">Audio recording will not be available until you accept the permission request</string>
+    <string name="permission_rationale_title">Need permission</string>
+    <string name="permission_rationale_message">The permission is needed for app to work properly, so please, allow it!</string>
+    <string name="permission_rationale_settings_button_text">SETTINGS</string>
+    <string name="cancel">Cancel</string>
+    <string name="ok">OK</string>
+
+    <string name="checkout">Checkout (%s)</string>
+
+    <string name="connect_account">Connect Account</string>
+    <string name="title_activity_customer_service">CustomerServiceActivity</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="customer_service_description">Have an idea, a suggestion, or just want to say hello? Undiscovered Archives is here to listen. We promise all messages are read by senior members of our management team. \n\nIf you have questions regarding Sale/Purchase, please email <b>support@undiscoveredarchives.com.</b> \n\nPlease note: Please contact your local store for questions about specific styles and labels.</string>
+
+    <string name="shop_by_category">Shop By Category</string>
+    <string name="products_for_you">Products For You</string>
+
+    <string name="no_internet_connection">Please check your internet connection</string>
+    <string name="toast_success">Success</string>
+    <string name="toast_error">Error</string>
+
+</resources>

@@ -1,0 +1,94 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.UndiscoveredArchives" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/black</item>
+        <item name="colorPrimaryVariant">@color/white</item>
+        <item name="colorOnPrimary">@color/black</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/black</item>
+        <item name="colorSecondaryVariant">@color/black</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+        <item name="android:forceDarkAllowed" tools:targetApi="q">false</item>
+        <!--To Hide the white screen at start-->
+        <item name="android:windowDisablePreview">true</item>
+    </style>
+
+    <style name="Theme.UndiscoveredArchives.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.UndiscoveredArchives.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.UndiscoveredArchives.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+
+    <!--Auth Edittext Style-->
+    <style name="AuthEdittextStyle" parent="@android:style/Widget.EditText">
+        <item name="android:background">@drawable/auth_edittext_drawable</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textColorHint">@color/auth_edittext_border</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:textAlignment">textStart</item>
+        <item name="android:paddingStart">12dp</item>
+        <item name="android:paddingEnd">12dp</item>
+        <item name="android:fontFamily">@font/roboto_regular</item>
+    </style>
+
+    <!--App Large Button Style-->
+    <style name="AppBlackLargeButtonStyle" parent="@android:style/Widget.TextView">
+        <item name="android:background">@drawable/app_button_drawable</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:drawablePadding">5dp</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:paddingStart">12dp</item>
+        <item name="android:paddingEnd">12dp</item>
+        <item name="android:fontFamily">@font/roboto_bold</item>
+        <!--        <item name="android:foreground">?selectableItemBackgroundBorderless</item>-->
+    </style>
+
+    <style name="AppGreyLargeButtonStyle" parent="@android:style/Widget.TextView">
+        <item name="android:background">@drawable/app_button_grey_drawable</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:gravity">center</item>
+        <item name="android:drawablePadding">5dp</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:paddingStart">12dp</item>
+        <item name="android:paddingEnd">12dp</item>
+        <item name="android:fontFamily">@font/roboto_bold</item>
+    </style>
+
+    <style name="AppWhiteLargeButtonStyle" parent="@android:style/Widget.TextView">
+        <item name="android:background">@drawable/app_button_white_drawable</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:gravity">center</item>
+        <item name="android:drawablePadding">5dp</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:paddingStart">12dp</item>
+        <item name="android:paddingEnd">12dp</item>
+        <item name="android:fontFamily">@font/roboto_bold</item>
+    </style>
+
+
+    <!--Star Rating bar style -->
+    <style name="RatingBar" parent="Theme.AppCompat">
+        <item name="colorControlNormal">@color/dividers</item>
+        <item name="colorControlActivated">@color/star_color</item>
+    </style>
+
+    <!--Drop Down Style-->
+    <style name="SpinnerTheme" parent="android:Widget.Spinner">
+        <item name="android:background">@drawable/spinner_background</item>
+    </style>
+
+</resources>

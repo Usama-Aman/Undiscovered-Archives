@@ -1,0 +1,871 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.codingpixel.undiscoveredarchives.view_models.HomeViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@color/white"
+            android:scrollbarSize="5dp"
+            android:scrollbarThumbVertical="@color/black"
+            android:scrollbars="vertical"
+            app:layout_constraintBottom_toTopOf="@id/constraintListOption"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:paddingBottom="20dp">
+
+
+                <androidx.viewpager2.widget.ViewPager2
+                    android:id="@+id/productPhotosViewPager"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:background="@color/dividers"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/topBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@color/transparent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:id="@+id/ivBack"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginStart="15dp"
+                        android:padding="8dp"
+                        android:src="@drawable/ic_back"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                    <ImageView
+                        android:id="@+id/ivShare"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginEnd="15dp"
+                        android:padding="8dp"
+                        android:src="@drawable/ic_share"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <com.hrskrs.instadotlib.InstaDotView
+                    android:id="@+id/instaDotIndicator"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    app:dot_activeColor="@color/black"
+                    app:dot_activeSize="8dp"
+                    app:dot_inactiveColor="@color/view_more_grey"
+                    app:dot_inactiveSize="6dp"
+                    app:dot_margin="5dp"
+                    app:dot_mediumSize="5dp"
+                    app:dot_smallSize="4dp"
+                    app:layout_constraintBottom_toBottomOf="@id/productPhotosViewPager"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constraintDesignerDetails"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:paddingHorizontal="20dp"
+                    android:paddingTop="15dp"
+                    android:paddingBottom="15dp"
+                    android:visibility="gone"
+                    app:layout_constraintTop_toBottomOf="@id/productPhotosViewPager">
+
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cvStoreImage"
+                        android:layout_width="60dp"
+                        android:layout_height="40dp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <ImageView
+                            android:id="@+id/ivStoreImage"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/store_image" />
+
+                    </androidx.cardview.widget.CardView>
+
+
+                    <TextView
+                        android:id="@+id/tvStoreName"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="20dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="2dp"
+                        android:fontFamily="@font/roboto_medium"
+                        android:lines="1"
+                        android:maxLines="1"
+                        android:minLines="1"
+                        android:singleLine="true"
+                        android:text="Hermès Luxury GoodsHermès Luxury GoodsHermès Luxury GoodsHermès Luxury GoodsHermès Luxury Goods"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        app:layout_constraintBottom_toTopOf="@id/v"
+                        app:layout_constraintLeft_toRightOf="@id/cvStoreImage"
+                        app:layout_constraintRight_toLeftOf="@id/clFavTab" />
+
+                    <View
+                        android:id="@+id/v"
+                        android:layout_width="0dp"
+                        android:layout_height="0.1dp"
+                        android:background="@color/transparent"
+                        app:layout_constraintBottom_toBottomOf="@id/cvStoreImage"
+                        app:layout_constraintLeft_toRightOf="@id/cvStoreImage"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/cvStoreImage" />
+
+                    <TextView
+                        android:id="@+id/tvStoreProducts"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="20dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="2dp"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/roboto_medium"
+                        android:text="13.2k Listings"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/store_products_color"
+                        android:textSize="11sp"
+                        app:layout_constraintLeft_toRightOf="@id/cvStoreImage"
+                        app:layout_constraintRight_toLeftOf="@id/clFavTab"
+                        app:layout_constraintTop_toBottomOf="@id/v" />
+
+                    <ImageView
+                        android:id="@+id/clFavTab"
+                        android:layout_width="42dp"
+                        android:layout_height="42dp"
+                        android:padding="8dp"
+                        android:src="@drawable/ic_fav_tabbar_sel"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <TextView
+                    android:id="@+id/tvProductName"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="Pure Silk Knit Mens Polo T-Shirt Turndown Collar Short Sleeves"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toLeftOf="@id/tvProductPrice"
+                    app:layout_constraintTop_toBottomOf="@id/constraintDesignerDetails" />
+
+                <TextView
+                    android:id="@+id/tvProductPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="$33.00"
+                    android:textColor="@color/product_price_color"
+                    android:textSize="16sp"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/constraintDesignerDetails" />
+
+                <TextView
+                    android:id="@+id/tv1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="Order ID"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvProductName" />
+
+
+                <TextView
+                    android:id="@+id/tv1Ans"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="#13AG242"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/profile_username_color"
+                    android:textSize="14sp"
+                    app:layout_constraintLeft_toRightOf="@id/tv1"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvProductName" />
+
+                <View
+                    android:id="@+id/v1"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_margin="12dp"
+                    android:background="@color/fav_divider_color"
+                    app:layout_constraintTop_toBottomOf="@id/tv1" />
+
+
+                <TextView
+                    android:id="@+id/tv2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="12dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="Commission %"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/v1" />
+
+
+                <TextView
+                    android:id="@+id/tv2Ans"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="12dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="04 %"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/profile_username_color"
+                    android:textSize="14sp"
+                    app:layout_constraintLeft_toRightOf="@id/tv2"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/v1" />
+
+
+                <View
+                    android:id="@+id/v2"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_margin="12dp"
+                    android:background="@color/fav_divider_color"
+                    app:layout_constraintTop_toBottomOf="@id/tv2" />
+
+                <TextView
+                    android:id="@+id/tv3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="12dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="Payment Method"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/v2" />
+
+
+                <TextView
+                    android:id="@+id/tv3Ans"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="12dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="Paypal"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/profile_username_color"
+                    android:textSize="14sp"
+                    app:layout_constraintLeft_toRightOf="@id/tv3"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/v2" />
+
+
+                <View
+                    android:id="@+id/v3"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_margin="12dp"
+                    android:background="@color/fav_divider_color"
+                    app:layout_constraintTop_toBottomOf="@id/tv3" />
+
+                <TextView
+                    android:id="@+id/tv4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="12dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="Status"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/v3" />
+
+
+                <TextView
+                    android:id="@+id/tv4Ans"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="12dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="Paid"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/profile_username_color"
+                    android:textSize="14sp"
+                    app:layout_constraintLeft_toRightOf="@id/tv4"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/v3" />
+
+
+                <View
+                    android:id="@+id/v4"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_margin="12dp"
+                    android:background="@color/fav_divider_color"
+                    app:layout_constraintTop_toBottomOf="@id/tv4" />
+
+                <TextView
+                    android:id="@+id/tv5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="12dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="Status"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    android:visibility="gone"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/v4" />
+
+
+                <TextView
+                    android:id="@+id/tv5Ans"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="12dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="$63"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/profile_username_color"
+                    android:textSize="14sp"
+                    android:visibility="gone"
+                    app:layout_constraintLeft_toRightOf="@id/tv5"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/v4" />
+
+
+                <View
+                    android:id="@+id/v5"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_margin="12dp"
+                    android:background="@color/fav_divider_color"
+                    android:visibility="gone"
+                    app:layout_constraintTop_toBottomOf="@id/tv5" />
+
+
+                <TextView
+                    android:id="@+id/tvDes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="12dp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="Description"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/v5" />
+
+
+                <TextView
+                    android:id="@+id/tvProductDescription"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="12dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="Phasellus dignissim, tellus in pellentesque mollis, mafduris orci dignissim nisl, id gravida nunc enim quis nibh. Maecenas convallis eros a ante dignissim, vitae elementum metus facilisis adasras in maximus sem. Praesent libero augue, ornare eget quam sed, volutpat suscipit arcu. Duis sdasdut urna commodo, commodo tellus ac, consequat justo."
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvDes" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </ScrollView>
+
+
+        <LinearLayout
+            android:id="@+id/constraintListOption"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:elevation="@dimen/panel_elevation"
+            android:orientation="vertical"
+            android:padding="15dp"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <LinearLayout
+                android:id="@+id/btnPublish"
+                style="@style/AppGreyLargeButtonStyle"
+                android:layout_width="match_parent"
+                android:background="@drawable/greenish_button_drawable"
+                android:visibility="gone">
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:padding="3dp"
+                    android:src="@drawable/ic_publish" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="Publish"
+                    android:textAllCaps="true"
+                    android:textColor="@color/white" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llPurchaseOptions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+
+                <LinearLayout
+                    android:id="@+id/btnRateProductPurchase"
+                    style="@style/AppGreyLargeButtonStyle"
+                    android:layout_width="0dp"
+                    android:layout_marginTop="7.5dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/yellow_button_drawable">
+
+                    <ImageView
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:padding="3dp"
+                        android:src="@drawable/ic_star" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto_bold"
+                        android:text="Rate product"
+                        android:textAllCaps="true"
+                        android:textColor="@color/black" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/btnDownloadInvoicePurchase"
+                    style="@style/AppBlackLargeButtonStyle"
+                    android:layout_width="0dp"
+                    android:layout_marginTop="7.5dp"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:padding="3dp"
+                        android:src="@drawable/ic_download" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto_bold"
+                        android:text="Download Invoice"
+                        android:textAlignment="center"
+                        android:textAllCaps="true"
+                        android:textColor="@color/white"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llPublishedProductOptions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:id="@+id/btnEditPublished"
+                    style="@style/AppGreyLargeButtonStyle"
+                    android:layout_width="0dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:padding="3dp"
+                        android:src="@drawable/ic_edit" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto_bold"
+                        android:text="Edit"
+                        android:textAllCaps="true"
+                        android:textColor="@color/black" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/btnDeletePublished"
+                    style="@style/AppBlackLargeButtonStyle"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/red_button_drawable">
+
+                    <ImageView
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:padding="3dp"
+                        android:src="@drawable/ic_delete" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto_bold"
+                        android:text="Delete"
+                        android:textAllCaps="true"
+                        android:textColor="@color/white" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llCurrentOrdersOptions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:id="@+id/btnDownloadInvoiceCurrentOrders"
+                    style="@style/AppGreyLargeButtonStyle"
+                    android:layout_width="0dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:padding="3dp"
+                        android:src="@drawable/ic_download_black" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto_bold"
+                        android:text="Download Invoice"
+                        android:textAllCaps="true"
+                        android:textColor="@color/black" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/btnCancelCurrentOrders"
+                    style="@style/AppBlackLargeButtonStyle"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/red_button_drawable">
+
+                    <ImageView
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:padding="3dp"
+                        android:src="@drawable/ic_cancel" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto_bold"
+                        android:text="Cancel order"
+                        android:textAllCaps="true"
+                        android:textColor="@color/white" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/btnDownloadSalesHistory"
+                style="@style/AppGreyLargeButtonStyle"
+                android:layout_width="match_parent"
+                android:background="@drawable/app_button_drawable"
+                android:visibility="gone">
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:padding="3dp"
+                    android:src="@drawable/ic_download" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="Download Invoice"
+                    android:textAllCaps="true"
+                    android:textColor="@color/white" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llShippingOptions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:id="@+id/btnMessageShipping"
+                    style="@style/AppGreyLargeButtonStyle"
+                    android:layout_width="0dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:padding="3dp"
+                        android:src="@drawable/ic_message" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto_bold"
+                        android:text="Message"
+                        android:textAllCaps="true"
+                        android:textColor="@color/black" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/btnShipNowShipping"
+                    style="@style/AppBlackLargeButtonStyle"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/red_button_drawable">
+
+                    <ImageView
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:padding="3dp"
+                        android:src="@drawable/ic_ship_now" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto_bold"
+                        android:text="Ship Now"
+                        android:textAllCaps="true"
+                        android:textColor="@color/white" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llTrashOptions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:id="@+id/btnRestoreTrash"
+                    style="@style/AppGreyLargeButtonStyle"
+                    android:layout_width="0dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:padding="3dp"
+                        android:src="@drawable/ic_restore" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto_bold"
+                        android:text="Restore"
+                        android:textAllCaps="true"
+                        android:textColor="@color/black" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/btnDeleteTrash"
+                    style="@style/AppBlackLargeButtonStyle"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/red_button_drawable">
+
+                    <ImageView
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:padding="3dp"
+                        android:src="@drawable/ic_delete" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto_bold"
+                        android:text="Delete"
+                        android:textAllCaps="true"
+                        android:textColor="@color/white" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintDraftsOption"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:elevation="@dimen/panel_elevation"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <LinearLayout
+                    android:id="@+id/btnPublishDrafts"
+                    style="@style/AppGreyLargeButtonStyle"
+                    android:layout_width="match_parent"
+                    android:background="@drawable/greenish_button_drawable"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_marginEnd="7.5dp"
+                        android:padding="3dp"
+                        android:src="@drawable/ic_publish"
+                        app:layout_constraintBottom_toBottomOf="@id/etPassword"
+                        app:layout_constraintRight_toRightOf="@id/etPassword"
+                        app:layout_constraintTop_toTopOf="@id/etPassword" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto_bold"
+                        android:text="Publish"
+                        android:textAllCaps="true"
+                        android:textColor="@color/white" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/btnEditDrafts"
+                    style="@style/AppGreyLargeButtonStyle"
+                    android:layout_width="0dp"
+                    android:layout_marginTop="7.5dp"
+                    android:layout_marginEnd="15dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toLeftOf="@+id/btnDeleteDrafts"
+                    app:layout_constraintTop_toBottomOf="@id/btnPublishDrafts">
+
+                    <ImageView
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_marginEnd="7.5dp"
+                        android:padding="3dp"
+                        android:src="@drawable/ic_edit" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto_bold"
+                        android:text="Edit"
+                        android:textAllCaps="true"
+                        android:textColor="@color/black" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/btnDeleteDrafts"
+                    style="@style/AppBlackLargeButtonStyle"
+                    android:layout_width="0dp"
+                    android:layout_marginTop="7.5dp"
+                    android:background="@drawable/red_button_drawable"
+                    app:layout_constraintLeft_toRightOf="@id/btnEditDrafts"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/btnPublishDrafts">
+
+                    <ImageView
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_marginEnd="5dp"
+                        android:padding="3dp"
+                        android:src="@drawable/ic_delete" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto_bold"
+                        android:text="Delete"
+                        android:textAllCaps="true"
+                        android:textColor="@color/white" />
+
+                </LinearLayout>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </LinearLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>

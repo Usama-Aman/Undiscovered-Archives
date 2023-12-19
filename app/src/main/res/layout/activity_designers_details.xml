@@ -1,0 +1,587 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.codingpixel.undiscoveredarchives.view_models.HomeViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <com.faltenreich.skeletonlayout.SkeletonLayout
+            android:id="@+id/skeletonLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            app:maskColor="#F4F4F4"
+            app:maskCornerRadius="20dp"
+            app:shimmerColor="#E6E6E6">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    app:cardElevation="10dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="14dp"
+                    android:orientation="horizontal">
+
+                    <View
+                        android:layout_width="104dp"
+                        android:layout_height="70dp"
+                        app:cardCornerRadius="30dp"
+                        app:cardElevation="10dp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginHorizontal="12dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="20dp"
+                            app:cardCornerRadius="30dp"
+                            app:cardElevation="10dp" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="20dp"
+                            android:layout_marginTop="7dp"
+                            android:layout_marginEnd="40dp"
+                            app:cardCornerRadius="30dp"
+                            app:cardElevation="10dp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="2"
+                        android:orientation="vertical">
+
+                        <View
+                            android:layout_width="26dp"
+                            android:layout_height="26dp"
+                            android:layout_gravity="center_vertical|center_horizontal"
+                            app:cardCornerRadius="30dp"
+                            app:cardElevation="10dp" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="15dp"
+                    app:cardCornerRadius="30dp"
+                    app:cardElevation="10dp" />
+
+                <View
+                    android:layout_width="150dp"
+                    android:layout_height="21dp"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="20dp"
+                    app:cardCornerRadius="30dp"
+                    app:cardElevation="10dp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="42dp"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="5dp"
+                    app:cardCornerRadius="30dp"
+                    app:cardElevation="10dp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="8dp"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="6dp"
+                        android:orientation="vertical">
+
+                        <View
+                            android:layout_width="180dp"
+                            android:layout_height="130dp"
+                            app:cardCornerRadius="30dp"
+                            app:cardElevation="10dp" />
+
+                        <View
+                            android:layout_width="100dp"
+                            android:layout_height="21dp"
+                            android:layout_marginTop="5dp"
+                            app:cardCornerRadius="30dp"
+                            app:cardElevation="10dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="6dp"
+                        android:orientation="vertical">
+
+                        <View
+                            android:layout_width="180dp"
+                            android:layout_height="130dp"
+                            app:cardCornerRadius="30dp"
+                            app:cardElevation="10dp" />
+
+                        <View
+                            android:layout_width="100dp"
+                            android:layout_height="21dp"
+                            android:layout_marginTop="5dp"
+                            app:cardCornerRadius="30dp"
+                            app:cardElevation="10dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="6dp"
+                        android:orientation="vertical">
+
+                        <View
+                            android:layout_width="180dp"
+                            android:layout_height="130dp"
+                            app:cardCornerRadius="30dp"
+                            app:cardElevation="10dp" />
+
+                        <View
+                            android:layout_width="100dp"
+                            android:layout_height="21dp"
+                            android:layout_marginTop="5dp"
+                            app:cardCornerRadius="30dp"
+                            app:cardElevation="10dp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <View
+                    android:layout_width="140dp"
+                    android:layout_height="21dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="26dp"
+                    app:cardCornerRadius="30dp"
+                    app:cardElevation="10dp" />
+
+                <View
+                    android:layout_width="100dp"
+                    android:layout_height="21dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="20dp"
+                    app:cardCornerRadius="30dp"
+                    app:cardElevation="10dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="6dp"
+                        android:orientation="vertical">
+
+                        <View
+                            android:layout_width="140dp"
+                            android:layout_height="150dp"
+                            app:cardCornerRadius="30dp"
+                            app:cardElevation="10dp" />
+
+                        <View
+                            android:layout_width="140dp"
+                            android:layout_height="33dp"
+                            android:layout_marginTop="10dp"
+                            app:cardCornerRadius="30dp"
+                            app:cardElevation="10dp" />
+
+                        <View
+                            android:layout_width="50dp"
+                            android:layout_height="16dp"
+                            android:layout_marginTop="6dp"
+                            app:cardCornerRadius="30dp"
+                            app:cardElevation="10dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="6dp"
+                        android:orientation="vertical">
+
+                        <View
+                            android:layout_width="140dp"
+                            android:layout_height="150dp"
+                            app:cardCornerRadius="30dp"
+                            app:cardElevation="10dp" />
+
+                        <View
+                            android:layout_width="140dp"
+                            android:layout_height="33dp"
+                            android:layout_marginTop="10dp"
+                            app:cardCornerRadius="30dp"
+                            app:cardElevation="10dp" />
+
+                        <View
+                            android:layout_width="50dp"
+                            android:layout_height="16dp"
+                            android:layout_marginTop="6dp"
+                            app:cardCornerRadius="30dp"
+                            app:cardElevation="10dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="6dp"
+                        android:orientation="vertical">
+
+                        <View
+                            android:layout_width="140dp"
+                            android:layout_height="150dp"
+                            app:cardCornerRadius="30dp"
+                            app:cardElevation="10dp" />
+
+                        <View
+                            android:layout_width="140dp"
+                            android:layout_height="33dp"
+                            android:layout_marginTop="10dp"
+                            app:cardCornerRadius="30dp"
+                            app:cardElevation="10dp" />
+
+                        <View
+                            android:layout_width="50dp"
+                            android:layout_height="16dp"
+                            android:layout_marginTop="6dp"
+                            app:cardCornerRadius="30dp"
+                            app:cardElevation="10dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="6dp"
+                        android:orientation="vertical">
+
+                        <View
+                            android:layout_width="140dp"
+                            android:layout_height="150dp"
+                            app:cardCornerRadius="30dp"
+                            app:cardElevation="10dp" />
+
+                        <View
+                            android:layout_width="140dp"
+                            android:layout_height="33dp"
+                            android:layout_marginTop="10dp"
+                            app:cardCornerRadius="30dp"
+                            app:cardElevation="10dp" />
+
+                        <View
+                            android:layout_width="50dp"
+                            android:layout_height="16dp"
+                            android:layout_marginTop="6dp"
+                            app:cardCornerRadius="30dp"
+                            app:cardElevation="10dp" />
+                    </LinearLayout>
+
+
+                </LinearLayout>
+            </LinearLayout>
+
+        </com.faltenreich.skeletonlayout.SkeletonLayout>
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:id="@+id/coordinatorLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:visibility="gone"
+            tools:context=".home.designers_details.DesignersDetailsActivity">
+
+            <com.google.android.material.appbar.AppBarLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.appbar.CollapsingToolbarLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/white"
+                    app:layout_scrollFlags="scroll|exitUntilCollapsed|snap">
+
+                    <ImageView
+                        android:id="@+id/ivDisplayImage"
+                        android:layout_width="match_parent"
+                        android:layout_height="300dp"
+                        android:background="@color/dividers"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/img_designers_details"
+                        app:layout_collapseMode="parallax"
+                        app:layout_collapseParallaxMultiplier="0.7" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="20dp">
+
+                        <TextView
+                            android:id="@+id/ivBack"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_marginStart="15dp"
+                            android:padding="8dp"
+                            app:drawableStartCompat="@drawable/ic_back"
+                            app:drawableTint="@color/white"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/ivShare"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_marginEnd="15dp"
+                            android:padding="8dp"
+                            app:drawableStartCompat="@drawable/ic_share"
+                            app:drawableTint="@color/white"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/tabConstraint"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:paddingHorizontal="20dp"
+                    android:paddingTop="15dp"
+                    android:paddingBottom="15dp"
+                    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cvStoreImage"
+                        android:layout_width="100dp"
+                        android:layout_height="70dp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <ImageView
+                            android:id="@+id/ivStoreImage"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@color/dividers"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/store_image" />
+
+                    </androidx.cardview.widget.CardView>
+
+
+                    <TextView
+                        android:id="@+id/tvDesignerName"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="20dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="2dp"
+                        android:fontFamily="@font/roboto_medium"
+                        android:lines="1"
+                        android:maxLines="1"
+                        android:minLines="1"
+                        android:singleLine="true"
+                        android:text="Hermès Luxury GoodsHermès Luxury GoodsHermès Luxury GoodsHermès Luxury GoodsHermès Luxury Goods"
+                        android:textColor="@color/black"
+                        android:textSize="18sp"
+                        app:layout_constraintBottom_toTopOf="@id/v"
+                        app:layout_constraintLeft_toRightOf="@id/cvStoreImage"
+                        app:layout_constraintRight_toLeftOf="@id/ivFavorite" />
+
+                    <View
+                        android:id="@+id/v"
+                        android:layout_width="0dp"
+                        android:layout_height="0.1dp"
+                        android:background="@color/transparent"
+                        app:layout_constraintBottom_toBottomOf="@id/cvStoreImage"
+                        app:layout_constraintLeft_toRightOf="@id/cvStoreImage"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/cvStoreImage" />
+
+                    <TextView
+                        android:id="@+id/tvListingCount"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="20dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="2dp"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/roboto_regular"
+                        android:text="13.2k Listings"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/store_products_color"
+                        android:textSize="16sp"
+                        app:layout_constraintLeft_toRightOf="@id/cvStoreImage"
+                        app:layout_constraintRight_toLeftOf="@id/ivFavorite"
+                        app:layout_constraintTop_toBottomOf="@id/v" />
+
+                    <ImageView
+                        android:id="@+id/ivFavorite"
+                        android:layout_width="42dp"
+                        android:layout_height="42dp"
+                        android:padding="8dp"
+                        android:src="@drawable/ic_fav_tabbar_sel"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.appbar.AppBarLayout>
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:scrollbarSize="5dp"
+                android:scrollbarThumbVertical="@color/black"
+                android:scrollbars="vertical"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clipToPadding="false"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tvDesignerDescription"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="20dp"
+                        android:alpha=".9"
+                        android:fontFamily="@font/roboto_regular"
+                        android:lineHeight="21dp"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        tools:ignore="UnusedAttribute" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="20dp"
+                        android:layout_marginTop="23dp"
+                        android:fontFamily="@font/roboto_bold"
+                        android:text="@string/shop_by_category"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="20dp"
+                        android:layout_marginTop="5dp"
+                        android:fontFamily="@font/roboto_regular"
+                        android:lineHeight="17dp"
+                        android:text="A store that sells not just outfits but a trend. Be what you want to be and wear what you like."
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        tools:ignore="UnusedAttribute" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvShopByCategory"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:clipToPadding="false"
+                        android:layoutAnimation="@anim/layout_animation_right_to_left"
+                        android:orientation="horizontal"
+                        android:paddingHorizontal="20dp"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        tools:listitem="@layout/item_designers_shop_category" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="20dp"
+                        android:layout_marginTop="26dp"
+                        android:fontFamily="@font/roboto_medium"
+                        android:text="@string/products_for_you"
+                        android:textColor="@color/black"
+                        android:textSize="18sp" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvDesignerCategories"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:visibility="gone"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        tools:listitem="@layout/item_designers_shop_category" />
+
+                    <LinearLayout
+                        android:id="@+id/llNoData"
+                        android:layout_width="match_parent"
+                        android:layout_height="500dp"
+                        android:gravity="center_vertical"
+                        android:orientation="vertical"
+                        android:padding="25dp"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+
+                        <ImageView
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_no_record_found" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:fontFamily="@font/roboto_bold"
+                            android:text="No Record Found"
+                            android:textAlignment="center"
+                            android:textColor="@color/view_more_grey"
+                            android:textSize="16sp" />
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+            </androidx.core.widget.NestedScrollView>
+
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp">
+
+        <TextView
+            android:id="@+id/tvDescriptionType"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="2dp"
+            android:fontFamily="@font/roboto_medium"
+            android:paddingVertical="5dp"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/ivArrow"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginEnd="10dp"
+            android:padding="10dp"
+            android:src="@drawable/ic_arrow_up"
+            app:layout_constraintBottom_toBottomOf="@id/tvDescriptionType"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tvDescriptionType" />
+
+
+        <net.cachapa.expandablelayout.ExpandableLayout
+            android:id="@+id/expandable_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:el_duration="100"
+            app:el_expanded="true"
+            app:el_parallax="0.5"
+            app:layout_constraintTop_toBottomOf="@id/tvDescriptionType">
+
+            <TextView
+                android:id="@+id/tvDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="2dp"
+                android:fontFamily="@font/roboto_regular"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        </net.cachapa.expandablelayout.ExpandableLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

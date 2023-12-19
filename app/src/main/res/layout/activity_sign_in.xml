@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.codingpixel.undiscoveredarchives.view_models.AuthViewModel" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:scrollbarSize="5dp"
+        android:scrollbarThumbVertical="@color/black"
+        tools:context=".auth.SignInActivity">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="30dp"
+            android:paddingBottom="30dp"
+            tools:context=".auth.SignInActivity">
+
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginTop="50dp"
+                android:src="@drawable/app_logo_auth" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="30dp"
+                android:fontFamily="@font/roboto_regular"
+                android:text="Sign In"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="21sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/roboto_regular"
+                android:text="Enter your email and password to login"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="37dp"
+                android:fontFamily="@font/roboto_regular"
+                android:text="Email Address"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="15sp" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                app:boxBackgroundColor="@null"
+                app:boxStrokeErrorColor="@null"
+                app:boxStrokeWidth="0dp"
+                app:boxStrokeWidthFocused="0dp"
+                app:errorIconDrawable="@null"
+                app:hintEnabled="false">
+
+                <EditText
+                    android:id="@+id/etEmail"
+                    style="@style/AuthEdittextStyle"
+                    android:layout_width="match_parent"
+                    android:hint="abc@example.com"
+                    android:inputType="textEmailAddress"
+                    android:paddingVertical="0dp"
+                    android:textSize="15sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="23dp"
+                android:fontFamily="@font/roboto_regular"
+                android:text="Password"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="15sp" />
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    app:boxStrokeErrorColor="@null"
+                    app:boxStrokeWidth="0dp"
+                    app:boxStrokeWidthFocused="0dp"
+                    app:errorIconDrawable="@null"
+                    app:hintEnabled="false"
+                    app:layout_constraintBottom_toBottomOf="@id/etPassword"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/etPassword" />
+
+                <EditText
+                    android:id="@+id/etPassword"
+                    style="@style/AuthEdittextStyle"
+                    android:layout_width="match_parent"
+                    android:hint="••••••"
+                    android:inputType="textPassword"
+                    android:paddingEnd="32dp"
+                    android:textSize="15sp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="RtlSymmetry" />
+
+                <ImageView
+                    android:id="@+id/ivPasswordToggle"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginEnd="5dp"
+                    android:padding="3dp"
+                    android:paddingVertical="0dp"
+                    android:src="@drawable/ic_show_password"
+                    app:layout_constraintBottom_toBottomOf="@id/etPassword"
+                    app:layout_constraintRight_toRightOf="@id/etPassword"
+                    app:layout_constraintTop_toTopOf="@id/etPassword" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <TextView
+                android:id="@+id/btnLogin"
+                style="@style/AppBlackLargeButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_marginTop="25dp"
+                android:text="Login" />
+
+            <TextView
+                android:id="@+id/tvForgotPassword"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginTop="14dp"
+                android:fontFamily="@font/roboto_regular"
+                android:padding="8dp"
+                android:text="Forgot Password?"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="20dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_weight="1"
+                    android:background="@color/dividers" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="or"
+                    android:textColor="@color/auth_edittext_border"
+                    android:textSize="16sp" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_weight="1"
+                    android:background="@color/dividers" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/btnAppleLogin"
+                style="@style/AppBlackLargeButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_marginTop="25dp">
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginEnd="5dp"
+                    android:padding="3dp"
+                    android:src="@drawable/ic_apple_login"
+                    app:layout_constraintBottom_toBottomOf="@id/etPassword"
+                    app:layout_constraintRight_toRightOf="@id/etPassword"
+                    app:layout_constraintTop_toTopOf="@id/etPassword" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="Login with apple"
+                    android:textAllCaps="true"
+                    android:textColor="@color/white" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/btnGoogleLogin"
+                style="@style/AppGreyLargeButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_marginTop="10dp">
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginEnd="5dp"
+                    android:padding="3dp"
+                    android:src="@drawable/ic_gmail_login"
+                    app:layout_constraintBottom_toBottomOf="@id/etPassword"
+                    app:layout_constraintRight_toRightOf="@id/etPassword"
+                    app:layout_constraintTop_toTopOf="@id/etPassword" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="LOGIN with google"
+                    android:textAllCaps="true"
+                    android:textColor="@color/black" />
+
+
+            </LinearLayout>
+
+
+            <com.facebook.login.widget.LoginButton
+                android:id="@+id/fbLoginButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="30dp"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:id="@+id/btnFacebookLogin"
+                style="@style/AppGreyLargeButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_marginTop="10dp">
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginEnd="5dp"
+                    android:padding="3dp"
+                    android:src="@drawable/ic_facebook_login"
+                    app:layout_constraintBottom_toBottomOf="@id/etPassword"
+                    app:layout_constraintRight_toRightOf="@id/etPassword"
+                    app:layout_constraintTop_toTopOf="@id/etPassword" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="LOGIN with Facebook"
+                    android:textAllCaps="true"
+                    android:textColor="@color/black" />
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/llRegister"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginEnd="5dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:gravity="center_vertical"
+                    android:includeFontPadding="false"
+                    android:lineSpacingExtra="0dp"
+                    android:text="Don’t have an account?"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto_regular"
+                        android:includeFontPadding="false"
+                        android:lineSpacingExtra="0dp"
+                        android:text="Re"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/black" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:fontFamily="@font/roboto_regular"
+                    android:includeFontPadding="false"
+                    android:lineSpacingExtra="0dp"
+                    android:text="g"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end"
+                        android:fontFamily="@font/roboto_regular"
+                        android:includeFontPadding="false"
+                        android:lineSpacingExtra="0dp"
+                        android:text="ister Now"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/black" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+</layout>

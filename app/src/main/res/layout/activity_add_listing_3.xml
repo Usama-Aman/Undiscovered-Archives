@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.codingpixel.undiscoveredarchives.view_models.HomeViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            android:id="@+id/topBar"
+            layout="@layout/layout_toolbar" />
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginBottom="20dp"
+            android:background="@color/white"
+            android:scrollbarSize="5dp"
+            android:scrollbarThumbVertical="@color/black"
+            android:scrollbars="vertical"
+            app:layout_constraintBottom_toTopOf="@id/btnNext"
+            app:layout_constraintTop_toBottomOf="@id/topBar">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="Shipping Charges"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:lineHeight="18dp"
+                    android:text="Shipping costs are dependent on the service used as well as the size/weight of the package and the destination. Most services have an online tool for calculating the shipping costs in advance. Once a buyer has paid, it is the seller’s responsibility to complete and pay for the shipment."
+                    android:textColor="@color/black"
+                    android:textSize="12sp" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="Select Country To Set Shipping Costs"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/shippingRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layoutAnimation="@anim/layout_animation_down_to_up"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:itemCount="5"
+                    tools:listitem="@layout/item_listing_zones" />
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+
+        <TextView
+            android:id="@+id/btnNext"
+            style="@style/AppBlackLargeButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="20dp"
+            android:text="Next"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>

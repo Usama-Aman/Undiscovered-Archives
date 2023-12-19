@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/tvTabTitle"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:fontFamily="@font/roboto_medium"
+    android:lineHeight="15.6dp"
+    android:lines="1"
+    android:maxLines="1"
+    android:minLines="1"
+    android:padding="8dp"
+    android:text=""
+    android:textAlignment="center"
+    android:textColor="@color/view_more_grey"
+    android:textFontWeight="400"
+    android:textSize="16sp" />

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".home.searchable_spinner.SearchableSpinnerActivity">
+
+        <include
+            android:id="@+id/topBar"
+            layout="@layout/layout_toolbar" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:clipToPadding="false"
+            android:orientation="vertical"
+            android:paddingHorizontal="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/topBar">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvSearch"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="20dp"
+                android:background="@color/white"
+                app:cardCornerRadius="30dp"
+                app:cardElevation="10dp"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <EditText
+                        android:id="@+id/etSearch"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:background="@null"
+                        android:drawableStart="@drawable/ic_search_home"
+                        android:drawablePadding="7dp"
+                        android:drawableTint="@color/black"
+                        android:fontFamily="@font/roboto_regular"
+                        android:gravity="center_vertical"
+                        android:hint="Search"
+                        android:imeOptions="actionSearch"
+                        android:maxLines="1"
+                        android:paddingHorizontal="12dp"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/light_grey"
+                        android:textSize="13sp"
+                        app:layout_constraintEnd_toStartOf="@id/ivCross"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/ivCross"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:paddingHorizontal="15dp"
+                        android:src="@drawable/ic_cross_search"
+                        android:visibility="gone"
+                        app:layout_constraintEnd_toEndOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvSearchedResults"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/item_searchable_spinner" />
+
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.codingpixel.undiscoveredarchives.view_models.HomeViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            android:id="@+id/topBar"
+            layout="@layout/layout_toolbar" />
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@color/white"
+            android:scrollbarSize="5dp"
+            android:scrollbarThumbVertical="@color/black"
+            android:scrollbars="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/topBar">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingBottom="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="Condition"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="10dp"
+                        android:layout_height="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:src="@drawable/ic_spinner_down"
+                        app:layout_constraintBottom_toBottomOf="@id/conditionSpinner"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/conditionSpinner" />
+
+
+                    <TextView
+                        android:id="@+id/conditionSpinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="12dp"
+                        android:background="@drawable/auth_edittext_drawable"
+                        android:gravity="center_vertical"
+                        android:hint="Select Condition"
+                        android:paddingHorizontal="12dp"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/auth_edittext_border"
+                        android:textSize="14sp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/tilConditionSpinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        app:boxStrokeErrorColor="@null"
+                        app:boxStrokeWidth="0dp"
+                        app:boxStrokeWidthFocused="0dp"
+                        app:errorIconDrawable="@null"
+                        app:hintEnabled="false"
+                        app:layout_constraintBottom_toBottomOf="@id/conditionSpinner"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/conditionSpinner" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="Currency"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="10dp"
+                        android:layout_height="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:src="@drawable/ic_spinner_down"
+                        app:layout_constraintBottom_toBottomOf="@id/currencySpinner"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/currencySpinner" />
+
+
+                    <TextView
+                        android:id="@+id/currencySpinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="12dp"
+                        android:background="@drawable/auth_edittext_drawable"
+                        android:gravity="center_vertical"
+                        android:hint="Select Currency"
+                        android:paddingHorizontal="12dp"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/auth_edittext_border"
+                        android:textSize="14sp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/tilCurrencySpinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        app:boxStrokeErrorColor="@null"
+                        app:boxStrokeWidth="0dp"
+                        app:boxStrokeWidthFocused="0dp"
+                        app:errorIconDrawable="@null"
+                        app:hintEnabled="false"
+                        app:layout_constraintBottom_toBottomOf="@id/currencySpinner"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/currencySpinner" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="12dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="All prices on Undiscovered Archives are in USD. If you specify an additional currency here buyers will also have the option to pay with that."
+                    android:textColor="@color/black"
+                    android:textSize="12sp" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="Description"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+
+                <EditText
+                    android:id="@+id/etDescription"
+                    style="@style/AuthEdittextStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="12dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:gravity="start"
+                    android:hint="Write product description here..."
+                    android:inputType="textMultiLine|textCapWords"
+                    android:overScrollMode="always"
+                    android:paddingVertical="5dp"
+                    android:scrollbarStyle="insideInset"
+                    android:scrollbars="vertical"
+                    android:singleLine="false"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textSize="14sp" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilDescription"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="-20dp"
+                    android:visibility="gone"
+                    app:boxStrokeErrorColor="@null"
+                    app:boxStrokeWidth="0dp"
+                    app:boxStrokeWidthFocused="0dp"
+                    app:errorIconDrawable="@null"
+                    app:hintEnabled="false" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="Measurements"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+
+                <EditText
+                    android:id="@+id/etMeasurements"
+                    style="@style/AuthEdittextStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="12dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:gravity="start"
+                    android:hint="Write product measurement here..."
+                    android:inputType="textMultiLine|textCapWords"
+                    android:overScrollMode="always"
+                    android:paddingVertical="5dp"
+                    android:scrollbarStyle="insideInset"
+                    android:scrollbars="vertical"
+                    android:singleLine="false"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textSize="14sp" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilMeasurements"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="-20dp"
+                    android:visibility="gone"
+                    app:boxStrokeErrorColor="@null"
+                    app:boxStrokeWidth="0dp"
+                    app:boxStrokeWidthFocused="0dp"
+                    app:errorIconDrawable="@null"
+                    app:hintEnabled="false" />
+
+
+                <TextView
+                    android:id="@+id/btnNext"
+                    style="@style/AppBlackLargeButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="20dp"
+                    android:text="Next" />
+
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>

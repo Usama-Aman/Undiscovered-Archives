@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "528297506956",
+    "project_id": "undiscovered-arc-1630393817072",
+    "storage_bucket": "undiscovered-arc-1630393817072.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:528297506956:android:c8cacd96b64a81d3f0a3a9",
+        "android_client_info": {
+          "package_name": "com.codingpixel.undiscoveredarchives"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "528297506956-1ats8sl3iodbo40q4iaikvatj826u1ur.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDiB2Geyw0KC_ZjfmVrr2iC5582A_bHf_o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "528297506956-1ats8sl3iodbo40q4iaikvatj826u1ur.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "528297506956-nuv53vmb7fqss403680ngaupk7gce49f.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.codingpixel.UndiscoveredArchives.ios.UndiscoveredArchives"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,393 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.codingpixel.undiscoveredarchives.view_models.HomeViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            android:id="@+id/topBar"
+            layout="@layout/layout_toolbar" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:scrollbarSize="5dp"
+            android:scrollbarThumbVertical="@color/black"
+            android:scrollbars="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/topBar">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingHorizontal="30dp"
+                android:paddingBottom="20dp">
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:gravity="center_vertical"
+                    android:text="Secure Checkout"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="First Name"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="15sp" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/til_firstName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    app:boxStrokeErrorColor="@null"
+                    app:boxStrokeWidth="0dp"
+                    app:boxStrokeWidthFocused="0dp"
+                    app:errorIconDrawable="@null"
+                    app:hintEnabled="false">
+
+                    <EditText
+                        android:id="@+id/etFirstName"
+                        style="@style/AuthEdittextStyle"
+                        android:layout_width="match_parent"
+                        android:hint="e.g. Tyler"
+                        android:inputType="text"
+                        android:paddingVertical="0dp"
+                        android:textSize="15sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="Last Name"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="15sp" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/til_lastName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    app:boxStrokeErrorColor="@null"
+                    app:boxStrokeWidth="0dp"
+                    app:boxStrokeWidthFocused="0dp"
+                    app:errorIconDrawable="@null"
+                    app:hintEnabled="false">
+
+                    <EditText
+                        android:id="@+id/etLastName"
+                        style="@style/AuthEdittextStyle"
+                        android:layout_width="match_parent"
+                        android:hint="e.g. Stanley"
+                        android:inputType="text"
+                        android:paddingVertical="0dp"
+                        android:textSize="15sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="Street Address"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="15sp" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/til_streetAddress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    app:boxStrokeErrorColor="@null"
+                    app:boxStrokeWidth="0dp"
+                    app:boxStrokeWidthFocused="0dp"
+                    app:errorIconDrawable="@null"
+                    app:hintEnabled="false">
+
+                    <EditText
+                        android:id="@+id/etStreetAddress"
+                        style="@style/AuthEdittextStyle"
+                        android:layout_width="match_parent"
+                        android:hint="e.g. 216 Tetod Street"
+                        android:inputType="text"
+                        android:paddingVertical="0dp"
+                        android:textSize="15sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="Country"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+
+                    <TextView
+                        android:id="@+id/tvCountries"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto_regular"
+                        android:text="Country"
+                        android:textAlignment="center"
+                        android:textColor="@color/black"
+                        android:textSize="15sp"
+                        android:visibility="gone"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:layout_width="10dp"
+                        android:layout_height="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:src="@drawable/ic_spinner_down"
+                        app:layout_constraintBottom_toBottomOf="@id/countriesSpinner"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/countriesSpinner" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/tilSelectCountry"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        app:boxStrokeErrorColor="@null"
+                        app:boxStrokeWidth="0dp"
+                        app:boxStrokeWidthFocused="0dp"
+                        app:errorIconDrawable="@null"
+                        app:hintEnabled="false"
+                        app:layout_constraintBottom_toBottomOf="@id/countriesSpinner"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/countriesSpinner" />
+
+
+                    <TextView
+                        android:id="@+id/countriesSpinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="12dp"
+                        android:background="@drawable/auth_edittext_drawable"
+                        android:gravity="center_vertical"
+                        android:hint="Select Country"
+                        android:paddingHorizontal="12dp"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tvCountries" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="State"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+
+                    <TextView
+                        android:id="@+id/tvStates"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto_regular"
+                        android:text="State"
+                        android:textAlignment="center"
+                        android:textColor="@color/black"
+                        android:textSize="15sp"
+                        android:visibility="gone"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:layout_width="10dp"
+                        android:layout_height="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:src="@drawable/ic_spinner_down"
+                        app:layout_constraintBottom_toBottomOf="@id/statesSpinner"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/statesSpinner" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/tilSelectState"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        app:boxStrokeErrorColor="@null"
+                        app:boxStrokeWidth="0dp"
+                        app:boxStrokeWidthFocused="0dp"
+                        app:errorIconDrawable="@null"
+                        app:hintEnabled="false"
+                        app:layout_constraintBottom_toBottomOf="@id/statesSpinner"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/statesSpinner" />
+
+                    <TextView
+                        android:id="@+id/statesSpinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="12dp"
+                        android:background="@drawable/auth_edittext_drawable"
+                        android:gravity="center_vertical"
+                        android:hint="Select State"
+                        android:paddingHorizontal="12dp"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tvStates" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="City"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+
+                    <TextView
+                        android:id="@+id/tvCities"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto_regular"
+                        android:text="City"
+                        android:textAlignment="center"
+                        android:textColor="@color/black"
+                        android:textSize="15sp"
+                        android:visibility="gone"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:layout_width="10dp"
+                        android:layout_height="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:src="@drawable/ic_spinner_down"
+                        app:layout_constraintBottom_toBottomOf="@id/citiesSpinner"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/citiesSpinner" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/tilSelectCity"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        app:boxStrokeErrorColor="@null"
+                        app:boxStrokeWidth="0dp"
+                        app:boxStrokeWidthFocused="0dp"
+                        app:errorIconDrawable="@null"
+                        app:hintEnabled="false"
+                        app:layout_constraintBottom_toBottomOf="@id/citiesSpinner"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/citiesSpinner" />
+
+                    <TextView
+                        android:id="@+id/citiesSpinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="12dp"
+                        android:background="@drawable/auth_edittext_drawable"
+                        android:gravity="center_vertical"
+                        android:hint="Select City"
+                        android:paddingHorizontal="12dp"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tvCities" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="Zip Code"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="15sp" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/til_zipCode"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    app:boxStrokeErrorColor="@null"
+                    app:boxStrokeWidth="0dp"
+                    app:boxStrokeWidthFocused="0dp"
+                    app:errorIconDrawable="@null"
+                    app:hintEnabled="false">
+
+                    <EditText
+                        android:id="@+id/etZipCode"
+                        style="@style/AuthEdittextStyle"
+                        android:layout_width="match_parent"
+                        android:hint="000000"
+                        android:inputType="numberSigned"
+                        android:paddingVertical="0dp"
+                        android:textSize="15sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <TextView
+                    android:id="@+id/btnBuyWithPayPal"
+                    style="@style/AppBlackLargeButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="25dp"
+                    android:background="@drawable/buy_with_paypal" />
+
+
+            </LinearLayout>
+
+        </ScrollView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

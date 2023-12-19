@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.codingpixel.undiscoveredarchives.view_models.AuthViewModel" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:clipToPadding="false"
+        android:paddingBottom="20dp"
+        android:scrollbarSize="5dp"
+        android:scrollbarThumbVertical="@color/black"
+        android:scrollbars="vertical">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="20dp"
+            tools:context=".auth.OtpActivity">
+
+            <ImageView
+                android:id="@+id/ivLogo"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginTop="50dp"
+                android:src="@drawable/app_logo_auth"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/ivMain"
+                android:layout_width="match_parent"
+                android:layout_height="226dp"
+                android:layout_marginTop="32dp"
+                android:src="@drawable/otp_image"
+                app:layout_constraintTop_toBottomOf="@id/ivLogo" />
+
+            <TextView
+                android:id="@+id/tvEnterOtp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:fontFamily="@font/roboto_medium"
+                android:text="Enter OTP"
+                android:textColor="@color/black"
+                android:textSize="21sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ivMain" />
+
+            <TextView
+                android:id="@+id/tvOtpDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="60dp"
+                android:layout_marginTop="10dp"
+                android:alpha=".8"
+                android:fontFamily="@font/roboto_regular"
+                android:gravity="center"
+                android:lineHeight="21dp"
+                android:text="We have sent an OTP number to your email please enter it here!"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvEnterOtp"
+                tools:ignore="UnusedAttribute" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvDigit1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="28dp"
+                android:background="@drawable/bg_et_otp"
+                android:fontFamily="@font/roboto_regular"
+                android:gravity="center"
+                android:hint="-"
+                android:textColor="@color/black"
+                android:textColorHint="@color/auth_edittext_border"
+                android:textSize="34sp"
+                app:layout_constraintEnd_toStartOf="@+id/tvDigit2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvOtpDescription"
+                tools:ignore="HardcodedText" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvDigit2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_et_otp"
+                android:fontFamily="@font/roboto_regular"
+                android:gravity="center"
+                android:hint="-"
+                android:textColor="@color/black"
+                android:textColorHint="@color/auth_edittext_border"
+                android:textSize="34sp"
+                app:layout_constraintBottom_toBottomOf="@+id/tvDigit1"
+                app:layout_constraintEnd_toStartOf="@+id/tvDigit3"
+                app:layout_constraintStart_toEndOf="@+id/tvDigit1"
+                app:layout_constraintTop_toTopOf="@+id/tvDigit1"
+                tools:ignore="HardcodedText" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvDigit3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_et_otp"
+                android:fontFamily="@font/roboto_regular"
+                android:gravity="center"
+                android:hint="-"
+                android:textColor="@color/black"
+                android:textColorHint="@color/auth_edittext_border"
+                android:textSize="34sp"
+                app:layout_constraintBottom_toBottomOf="@+id/tvDigit1"
+                app:layout_constraintEnd_toStartOf="@+id/tvDigit4"
+                app:layout_constraintStart_toEndOf="@+id/tvDigit2"
+                app:layout_constraintTop_toTopOf="@+id/tvDigit1"
+                tools:ignore="HardcodedText" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvDigit4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_et_otp"
+                android:fontFamily="@font/roboto_regular"
+                android:gravity="center"
+                android:hint="-"
+                android:textColor="@color/black"
+                android:textColorHint="@color/auth_edittext_border"
+                android:textSize="34sp"
+                app:layout_constraintBottom_toBottomOf="@+id/tvDigit1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tvDigit3"
+                app:layout_constraintTop_toTopOf="@+id/tvDigit1"
+                tools:ignore="HardcodedText" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/et_code"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@android:color/transparent"
+                android:cursorVisible="false"
+                android:focusable="true"
+                android:gravity="top|start"
+                android:inputType="number"
+                android:maxEms="4"
+                android:maxLength="4"
+                android:textColor="@android:color/transparent"
+                android:textColorHint="@android:color/transparent"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="@+id/tvDigit1"
+                app:layout_constraintEnd_toEndOf="@+id/tvDigit4"
+                app:layout_constraintStart_toStartOf="@+id/tvDigit1"
+                app:layout_constraintTop_toTopOf="@+id/tvDigit1" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilError"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:visibility="gone"
+                app:boxStrokeErrorColor="@null"
+                app:boxStrokeWidth="0dp"
+                app:boxStrokeWidthFocused="0dp"
+                app:errorIconDrawable="@null"
+                app:hintEnabled="false"
+                app:layout_constraintBottom_toBottomOf="@id/et_code"
+                app:layout_constraintEnd_toEndOf="@id/et_code"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintStart_toStartOf="@id/et_code"
+                app:layout_constraintTop_toBottomOf="@id/et_code" />
+
+            <TextView
+                android:id="@+id/btnVerify"
+                style="@style/AppBlackLargeButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_marginHorizontal="21dp"
+                android:layout_marginTop="36dp"
+                android:text="Verify "
+                app:layout_constraintTop_toBottomOf="@id/et_code" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:gravity="center"
+                app:layout_constraintEnd_toEndOf="@id/btnVerify"
+                app:layout_constraintStart_toStartOf="@id/btnVerify"
+                app:layout_constraintTop_toBottomOf="@id/btnVerify">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:alpha=".8"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="Didn't received code yet?"
+                    android:textColor="@color/black"
+                    android:textSize="14sp" />
+
+                <LinearLayout
+                    android:id="@+id/llResendCode"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:alpha=".8"
+                        android:text="Resend code"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/black" />
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>

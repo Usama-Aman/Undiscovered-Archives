@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/tabConstraint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:paddingVertical="15dp">
+
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/ivRatingUserImage"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_user_product_rating"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvRatingUserName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="2dp"
+            android:fontFamily="@font/roboto_medium"
+            android:text="Tom Lee"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            app:layout_constraintLeft_toRightOf="@id/ivRatingUserImage"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@id/ivRatingUserImage" />
+
+
+        <TextView
+            android:id="@+id/tvRatingDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="2dp"
+            android:fontFamily="@font/roboto_medium"
+            android:text="March 23, 2021"
+            android:textAlignment="center"
+            android:textColor="@color/store_products_color"
+            android:textSize="12sp"
+            app:layout_constraintLeft_toRightOf="@id/ivRatingUserImage"
+            app:layout_constraintTop_toBottomOf="@id/tvRatingUserName" />
+
+
+        <RatingBar
+            android:id="@+id/ratingBar"
+            style="?android:attr/ratingBarStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:isIndicator="true"
+            android:numStars="5"
+            android:rating="3"
+            android:stepSize="0.1"
+            android:theme="@style/RatingBar"
+            app:layout_constraintLeft_toLeftOf="@id/ivRatingUserImage"
+            app:layout_constraintTop_toBottomOf="@id/ivRatingUserImage"
+            app:layout_goneMarginTop="2dp" />
+
+        <TextView
+            android:id="@+id/tvComment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/roboto_regular"
+            android:text="Maecenas interdum lorem eleifend orci aliquam mollis. Aliquam non rhoncus magna. Susndisse aliquet tincidunt enim, ut commodo elit feugiat et. Maecenas nec enim quis diam faucibus tristique. Nam fermentum, ipsum in suscipit pharetra."
+            android:textColor="@color/store_products_color"
+            android:textSize="14sp"
+            app:layout_constraintTop_toBottomOf="@id/ratingBar" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

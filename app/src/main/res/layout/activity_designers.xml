@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.codingpixel.undiscoveredarchives.view_models.HomeViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".home.designers.DesignersActivity">
+
+            <include
+                android:id="@+id/topBar"
+                layout="@layout/layout_toolbar" />
+
+            <com.faltenreich.skeletonlayout.SkeletonLayout
+                android:id="@+id/skeletonLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/topBar"
+                app:maskColor="#F4F4F4"
+                app:maskCornerRadius="20dp"
+                app:shimmerColor="#E6E6E6">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:layout_marginHorizontal="20dp"
+                            android:layout_marginTop="25dp"
+                            app:cardCornerRadius="30dp"
+                            app:cardElevation="10dp" />
+
+                        <View
+                            android:layout_width="134dp"
+                            android:layout_height="21dp"
+                            android:layout_marginHorizontal="20dp"
+                            android:layout_marginTop="20dp"
+                            app:cardCornerRadius="30dp"
+                            app:cardElevation="10dp" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginTop="13dp"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="8dp"
+                                android:orientation="vertical">
+
+                                <View
+                                    android:layout_width="220dp"
+                                    android:layout_height="125dp"
+                                    app:cardCornerRadius="30dp"
+                                    app:cardElevation="10dp" />
+
+                                <View
+                                    android:layout_width="match_parent"
+                                    android:layout_height="16dp"
+                                    android:layout_marginTop="4dp"
+                                    android:layout_marginEnd="20dp"
+                                    app:cardCornerRadius="30dp"
+                                    app:cardElevation="10dp" />
+
+                                <View
+                                    android:layout_width="100dp"
+                                    android:layout_height="16dp"
+                                    android:layout_marginTop="4dp"
+                                    app:cardCornerRadius="30dp"
+                                    app:cardElevation="10dp" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="8dp"
+                                android:orientation="vertical">
+
+                                <View
+                                    android:layout_width="220dp"
+                                    android:layout_height="125dp"
+                                    app:cardCornerRadius="30dp"
+                                    app:cardElevation="10dp" />
+
+                                <View
+                                    android:layout_width="match_parent"
+                                    android:layout_height="16dp"
+                                    android:layout_marginTop="4dp"
+                                    android:layout_marginEnd="20dp"
+                                    app:cardCornerRadius="30dp"
+                                    app:cardElevation="10dp" />
+
+                                <View
+                                    android:layout_width="100dp"
+                                    android:layout_height="16dp"
+                                    android:layout_marginTop="4dp"
+                                    app:cardCornerRadius="30dp"
+                                    app:cardElevation="10dp" />
+
+                            </LinearLayout>
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="8dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="18dp"
+                        app:cardCornerRadius="30dp"
+                        app:cardElevation="10dp" />
+
+                    <View
+                        android:layout_width="100dp"
+                        android:layout_height="25dp"
+                        android:layout_marginHorizontal="20dp"
+                        app:cardCornerRadius="30dp"
+                        app:cardElevation="10dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="21dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="50dp"
+                        app:cardCornerRadius="30dp"
+                        app:cardElevation="10dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="21dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="26dp"
+                        android:layout_marginEnd="70dp"
+                        app:cardCornerRadius="30dp"
+                        app:cardElevation="10dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="21dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="26dp"
+                        android:layout_marginEnd="98dp"
+                        app:cardCornerRadius="30dp"
+                        app:cardElevation="10dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="21dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="26dp"
+                        android:layout_marginEnd="128dp"
+                        app:cardCornerRadius="30dp"
+                        app:cardElevation="10dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="21dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="26dp"
+                        android:layout_marginEnd="158dp"
+                        app:cardCornerRadius="30dp"
+                        app:cardElevation="10dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="21dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="26dp"
+                        android:layout_marginEnd="50dp"
+                        app:cardCornerRadius="30dp"
+                        app:cardElevation="10dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="21dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginEnd="80dp"
+                        app:cardCornerRadius="30dp"
+                        app:cardElevation="10dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="21dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="26dp"
+                        android:layout_marginEnd="110dp"
+                        app:cardCornerRadius="30dp"
+                        app:cardElevation="10dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="21dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="26dp"
+                        android:layout_marginEnd="140dp"
+                        app:cardCornerRadius="30dp"
+                        app:cardElevation="10dp" />
+                </LinearLayout>
+            </com.faltenreich.skeletonlayout.SkeletonLayout>
+
+
+            <androidx.core.widget.NestedScrollView
+                android:id="@+id/designersScrollView"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:clipToPadding="false"
+                android:paddingBottom="20dp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/topBar">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:clipToPadding="false"
+                        android:orientation="vertical">
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cvSearch"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:layout_marginHorizontal="20dp"
+                            android:layout_marginTop="25dp"
+                            android:background="@color/white"
+                            app:cardCornerRadius="30dp"
+                            app:cardElevation="10dp"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:drawableStart="@drawable/ic_search_home"
+                                android:drawablePadding="7dp"
+                                android:fontFamily="@font/roboto_regular"
+                                android:gravity="center_vertical"
+                                android:paddingHorizontal="12dp"
+                                android:text="Search"
+                                android:textColor="@color/light_grey"
+                                android:textSize="13sp" />
+
+                        </androidx.cardview.widget.CardView>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="20dp"
+                            android:layout_marginTop="18dp"
+                            android:fontFamily="@font/roboto_bold"
+                            android:text="Popular Designers"
+                            android:textSize="16sp" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rvDesigners"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:clipToPadding="false"
+                            android:layoutAnimation="@anim/layout_animation_right_to_left"
+                            android:orientation="horizontal"
+                            android:paddingHorizontal="20dp"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                            tools:listitem="@layout/item_designers" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="8dp"
+                        android:layout_marginTop="18dp"
+                        android:background="@color/profile_screen_background" />
+
+                    <Spinner
+                        android:id="@+id/filter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:layout_marginHorizontal="20dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/spinner_background"
+                        android:backgroundTint="@color/black"
+                        android:dropDownWidth="300dp"
+                        android:gravity="start"
+                        android:paddingEnd="15dp"
+                        android:spinnerMode="dropdown"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tvHeader"
+                        tools:entries="@array/filter_list_designer"
+                        tools:ignore="UnusedAttribute" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvDesignerListingWithSorting"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:clipToPadding="false"
+                        android:nestedScrollingEnabled="false"
+                        android:paddingHorizontal="20dp"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        tools:listitem="@layout/item_sorting" />
+                </LinearLayout>
+            </androidx.core.widget.NestedScrollView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

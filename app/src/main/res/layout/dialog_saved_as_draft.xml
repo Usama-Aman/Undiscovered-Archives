@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <ImageView
+            android:id="@+id/ivCross"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="end"
+            android:src="@drawable/ic_cross" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/app_logo_auth" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/roboto_bold"
+            android:text="Saved As Draft"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/roboto_regular"
+            android:text="Your product has been saved as draft. You can come back later to publish it."
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+
+
+        <TextView
+            android:id="@+id/btnOK"
+            style="@style/AppBlackLargeButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_marginTop="25dp"
+            android:text="Ok Thanks" />
+
+
+    </LinearLayout>
+</layout>
